@@ -90,7 +90,8 @@
  <div class="sectionHead"><div class="eyebrow">Contato comercial</div><h2>Conte o que você precisa melhorar.</h2><p>Preencha o resumo e prepare uma mensagem para conversar com a Soluvi. Os canais diretos serão ativados assim que os contatos comerciais forem definidos.</p></div>
  <div class="contactGrid">
   <div class="contactCards">
-   <div class="contactCard"><h3>WhatsApp comercial</h3><p>Ideal para uma conversa rápida e para alinhar o primeiro atendimento.</p><div class="contactState" id="whatsappStatus">Número comercial ainda não configurado.</div><a class="btn small hidden" id="whatsappLink" href="#" target="_blank" rel="noopener">Conversar pelo WhatsApp ↗</a></div>
+   <div class="contactCard"><h3>Falar com Roger</h3><p>Contato comercial para conversar sobre sites, automações e soluções digitais.</p><p><strong>51 99314-4399</strong></p><a class="btn small" id="rogerWhatsAppLink" href="https://wa.me/5551993144399?text=Ol%C3%A1%21%20Conheci%20a%20Soluvi%20Digital%20e%20gostaria%20de%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Conversar com Roger ↗</a></div>
+   <div class="contactCard"><h3>Falar com Jessica</h3><p>Contato para conhecer as opções de marketing, landing pages e projetos digitais.</p><p><strong>51 92751606</strong></p><a class="btn small" id="jessicaWhatsAppLink" href="https://wa.me/555192751606?text=Ol%C3%A1%21%20Conheci%20a%20Soluvi%20Digital%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Conversar com Jessica ↗</a><p class="hint" style="margin-top:8px">Número informado para demonstração de contato; confirmem que o link abre a conta correta antes de divulgar.</p></div>
    <div class="contactCard"><h3>E-mail comercial</h3><p>Para explicar a necessidade com mais detalhes ou encaminhar uma solicitação.</p><div class="contactState" id="emailStatus">E-mail comercial ainda não configurado.</div><a class="btn small hidden" id="emailLink" href="#">Enviar e-mail ↗</a></div>
    <div class="contactCard"><h3>Como funciona o formulário</h3><p>Por enquanto, ele prepara uma mensagem para copiar. Não envia nem armazena informações. Não informe dados sigilosos.</p></div>
   </div>
@@ -100,6 +101,7 @@
    <div class="field"><label for="contactNeed">O que você procura?</label><select id="contactNeed" name="need" required><option value="">Escolha uma opção</option><option>Site ou landing page</option><option>Chatbot de orçamento e vendas</option><option>Automação de atendimento</option><option>Automação de processos</option><option>Relatórios e indicadores</option><option>Quero conversar para entender as opções</option></select></div>
    <div class="field"><label for="contactDetails">Conte um pouco sobre o desafio (opcional)</label><textarea id="contactDetails" name="details" maxlength="800" placeholder="O que gostaria de melhorar?"></textarea></div>
    <button class="btn dark" style="width:100%;margin-top:14px" type="submit">Preparar mensagem ↗</button><div id="contactNotice" class="contactNotice"></div><button id="copyContact" type="button" class="btn small hidden" style="margin-top:9px">Copiar mensagem</button>
+   <a id="sendWhatsApp" class="btn small hidden" style="margin-top:9px" href="#" target="_blank" rel="noopener">Enviar pelo WhatsApp ↗</a>
   </form>
  </div>
 </div></section>
@@ -107,18 +109,16 @@
 <footer class="footer"><div class="wrap footerIn"><a class="brand" href="#"><span class="mark">S</span><span>SOLUVI <span style="font-weight:500;color:#9fb0ba">DIGITAL</span></span></a><small>Estratégia que vende. Tecnologia que resolve.</small><small>© <span id="year"></span> Soluvi Digital · Vitrine com dados fictícios</small></div></footer>
 <script>
 /* Configure estes campos assim que a Soluvi definir os canais comerciais. */
-const SOLUVI_WHATSAPP = "";
+const SOLUVI_WHATSAPP_ROGER = "5551993144399";
+const SOLUVI_WHATSAPP_JESSICA = "555192751606";
 const SOLUVI_EMAIL = "";
 document.getElementById("year").textContent = new Date().getFullYear();
 function setupContactChannels(){
-  const w=document.getElementById("whatsappLink"), ws=document.getElementById("whatsappStatus");
-  const e=document.getElementById("emailLink"), es=document.getElementById("emailStatus");
-  if(SOLUVI_WHATSAPP.replace(/\D/g,"").length>=10){
-    w.href="https://wa.me/"+SOLUVI_WHATSAPP.replace(/\D/g,"")+"?text="+encodeURIComponent("Olá! Conheci a Soluvi Digital pela vitrine e gostaria de conversar sobre uma solução para meu negócio.");
-    w.classList.remove("hidden");ws.classList.add("hidden");
-  }
-  if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(SOLUVI_EMAIL)){
-    e.href="mailto:"+SOLUVI_EMAIL+"?subject="+encodeURIComponent("Contato comercial | Soluvi Digital");e.classList.remove("hidden");es.classList.add("hidden");
+  const emailLink=document.getElementById("emailLink"), emailStatus=document.getElementById("emailStatus");
+  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(SOLUVI_EMAIL);
+  if(emailOk){
+    emailLink.href="mailto:"+SOLUVI_EMAIL+"?subject="+encodeURIComponent("Contato comercial | Soluvi Digital");
+    emailLink.classList.remove("hidden");emailStatus.classList.add("hidden");
   }
 }
 setupContactChannels();
@@ -211,7 +211,7 @@ document.getElementById("contactForm").addEventListener("submit",e=>{
  e.preventDefault();const d=new FormData(e.currentTarget);
  const msg="Olá, Soluvi Digital! Meu nome é "+d.get("name")+". Empresa: "+(d.get("business")||"não informada")+". Interesse: "+d.get("need")+". Desafio: "+(d.get("details")||"não informado")+".";
  const out=document.getElementById("contactNotice");out.textContent="Mensagem preparada. Ela ainda não foi enviada porque o canal comercial não está configurado.\n\n"+msg;out.classList.add("show");
- const btn=document.getElementById("copyContact");btn.classList.remove("hidden");btn.onclick=()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(msg).then(()=>btn.textContent="Mensagem copiada ✓").catch(()=>{out.textContent+="\n\nSelecione o texto acima e copie manualmente.";});}else{out.textContent+="\n\nSelecione o texto acima e copie manualmente.";}}
+ const btn=document.getElementById("copyContact");btn.classList.remove("hidden");const send=document.getElementById("sendWhatsApp");send.href="https://wa.me/"+SOLUVI_WHATSAPP_ROGER+"?text="+encodeURIComponent(msg);send.classList.remove("hidden");btn.onclick=()=>{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(msg).then(()=>btn.textContent="Mensagem copiada ✓").catch(()=>{out.textContent+="\n\nSelecione o texto acima e copie manualmente.";});}else{out.textContent+="\n\nSelecione o texto acima e copie manualmente.";}}
 });
 </script>
 </body>
