@@ -9,6 +9,82 @@
 <style>
 :root{--navy:#10243a;--navy2:#173a50;--mint:#65ddcf;--mintpale:#e3faf5;--paper:#f4f7fa;--white:#fff;--muted:#617387;--line:#dbe4ec;--success:#177e68;--warn:#8f5b13;--shadow:0 20px 55px #10243a12}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--navy);background:var(--paper);line-height:1.55}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}.hero{color:#fff;background:radial-gradient(circle at 78% 18%,#245265 0,transparent 31%),linear-gradient(135deg,#0a1b2d,#183e54);padding-bottom:75px}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0}.brand{display:inline-flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.04em;font-size:1.12rem}.mark{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:var(--mint);color:var(--navy);font-weight:950;font-size:1.35rem}.navlinks{display:flex;gap:23px;color:#d1dce5;font-size:.9rem}.navlinks a:hover{color:var(--mint)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border:1px solid var(--mint);border-radius:999px;background:var(--mint);color:var(--navy);font-weight:800;transition:.18s}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px #65ddcf30}.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}.btn.outline{background:transparent;color:#fff;border-color:#ffffff65}.btn.small{padding:8px 12px;font-size:.84rem}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.heroGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:45px;align-items:center;padding:46px 0 5px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#168678;text-transform:uppercase;letter-spacing:.12em;font-weight:850;font-size:.74rem}.hero .eyebrow{color:var(--mint)}.dot{width:7px;height:7px;border-radius:50%;background:currentColor}h1{font-size:clamp(2.6rem,5.2vw,4.5rem);line-height:1.02;letter-spacing:-.065em;margin:19px 0}.hero h1 span{color:var(--mint)}.lead{font-size:1.08rem;color:#cad7e2;max-width:620px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}.heroNote{font-size:.84rem;color:#aebfce}.browser{background:#f9fbfd;color:var(--navy);padding:15px;border-radius:22px;box-shadow:0 35px 90px #0005;transform:rotate(1deg)}.browserTop{display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--line);padding:3px 4px 13px}.circle{height:8px;width:8px;border-radius:50%;background:#c1d0da}.browserLabel{margin-left:auto;font-size:.7rem;color:var(--muted)}.browserBody{padding:20px 9px 8px}.browserName{display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:850;font-size:.82rem}.pill{border-radius:999px;padding:5px 9px;background:var(--mintpale);color:var(--success);font-size:.68rem;font-weight:850}.browserTitle{font-weight:900;font-size:1.55rem;line-height:1.12;letter-spacing:-.045em;margin:25px 0 8px}.browserText{font-size:.82rem;color:var(--muted)}.browserCTA{border:0;border-radius:9px;width:100%;padding:12px;background:var(--navy);color:#fff;font-weight:800;margin:15px 0}.statRow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#edf3f7;border-radius:10px;padding:11px}.stat b{display:block;font-size:1.15rem}.stat span{font-size:.68rem;color:var(--muted)}.section{padding:78px 0}.section.white{background:#fff}.sectionHead{max-width:760px;margin-bottom:30px}.sectionHead h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.055em;margin:11px 0}.sectionHead p{color:var(--muted);font-size:1.02rem;margin:0}.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.service{background:#fff;border:1px solid var(--line);border-radius:17px;padding:21px}.iconBox{display:grid;place-items:center;width:43px;height:43px;border-radius:13px;background:var(--mintpale);font-size:1.25rem;margin-bottom:17px}.service h3{font-size:1rem;margin:0 0 7px}.service p{font-size:.88rem;color:var(--muted);margin:0}.disclaimer{border:1px dashed #b5c8d6;border-radius:12px;padding:12px 15px;color:#536a7e;background:#f7fafc;font-size:.82rem;margin-bottom:24px}.demoGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 30px #10243a08}.panelHeader{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#eef4f7;padding:16px 19px;border-bottom:1px solid var(--line)}.panelHeader strong{font-size:.92rem}.tag{font-size:.69rem;padding:5px 9px;border-radius:999px;background:#dff8f2;color:#157b6c;font-weight:850;white-space:nowrap}.panelBody{padding:20px}.panelBody h3{font-size:1.28rem;line-height:1.18;letter-spacing:-.035em;margin:0 0 8px}.muted{color:var(--muted)}.hint{font-size:.78rem;color:var(--muted)}.products{display:grid;gap:10px;margin:17px 0}.product{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px;border:1px solid var(--line);border-radius:13px}.product.selected{border-color:#59bcae;background:#f0fffb}.productName{font-weight:800;font-size:.92rem}.productDesc{font-size:.77rem;color:var(--muted);margin-top:3px}.price{font-weight:900;white-space:nowrap}.demoForm{display:grid;gap:12px;margin-top:16px}.field label{display:block;font-size:.8rem;font-weight:800;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd8e2;border-radius:9px;padding:10px 11px;background:#fff;color:var(--navy)}.field textarea{min-height:74px;resize:vertical}.totals{background:#f1f6f8;border-radius:12px;padding:14px;margin:12px 0}.totalLine{display:flex;justify-content:space-between;gap:14px;font-size:.84rem;padding:3px 0}.totalLine.final{font-weight:900;font-size:1.05rem;border-top:1px solid var(--line);margin-top:8px;padding-top:10px}.receipt{display:none;background:#effcf7;border:1px solid #a7e5d3;border-radius:15px;padding:18px;margin-top:16px}.receipt.show{display:block}.receipt h4{margin:0 0 7px;font-size:1.13rem;color:#126e59}.receiptId{font-size:.72rem;color:#3e7266;letter-spacing:.08em;font-weight:850}.receipt p{font-size:.85rem;margin:6px 0}.receipt ul{font-size:.82rem;padding-left:19px;margin:11px 0}.status{display:inline-flex;padding:5px 9px;background:#d4f7e8;border-radius:999px;color:#126e59;font-weight:850;font-size:.74rem}.botWindow{background:#f4f8fa;border-radius:13px;border:1px solid var(--line);padding:13px;min-height:220px;max-height:300px;overflow:auto;display:flex;flex-direction:column;gap:9px}.bubble{max-width:91%;background:#fff;border:1px solid var(--line);border-radius:12px 12px 12px 4px;padding:10px 12px;font-size:.82rem;white-space:pre-wrap}.bubble.user{align-self:flex-end;background:#ddfaf2;border-color:#b8eadf;border-radius:12px 12px 4px 12px}.quick{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.quick button{border:1px solid #8dd6c8;background:#fff;color:#126e62;border-radius:999px;padding:7px 10px;font-size:.75rem;font-weight:750}.quick button:hover{background:var(--mintpale)}.supportActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.supportActions button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:9px;padding:9px 11px;font-size:.79rem;font-weight:750}.supportActions button:hover{border-color:#7ecbbb;background:#f2fffc}.ticket{background:#f0f7fa;border:1px solid var(--line);padding:12px;border-radius:11px;margin-top:10px;font-size:.8rem}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:19px;background:#f6f9fb;border-top:3px solid var(--mint);border-radius:0 0 13px 13px}.step small{color:#168678;font-weight:900}.step h3{font-size:1rem;margin:8px 0 5px}.step p{font-size:.84rem;color:var(--muted);margin:0}.contactGrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px}.contactCards{display:grid;gap:12px}.contactCard{padding:18px;background:#fff;border:1px solid var(--line);border-radius:15px}.contactCard h3{margin:0 0 4px;font-size:1rem}.contactCard p{color:var(--muted);font-size:.84rem;margin:0 0 12px}.contactState{font-size:.77rem;color:var(--warn);background:#fff8e8;padding:9px 10px;border-radius:9px}.contactForm{padding:22px;background:#fff;border:1px solid var(--line);border-radius:17px}.contactForm h3{margin:0 0 5px}.contactForm>p{font-size:.84rem;color:var(--muted);margin:0 0 14px}.contactNotice{display:none;margin-top:12px;background:#e5faf3;border:1px solid #aee8d7;padding:12px;border-radius:10px;font-size:.82rem;white-space:pre-wrap}.contactNotice.show{display:block}.footer{background:#091827;color:#c6d2dc;padding:26px 0}.footerIn{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.footer small{color:#9cadba}.band{padding:33px;border-radius:21px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px}.band h2{font-size:clamp(1.65rem,3vw,2.35rem);letter-spacing:-.05em;line-height:1.1;margin:8px 0}.band p{max-width:650px;color:#bdcddb;margin:0}.hidden{display:none!important}@media(max-width:900px){.heroGrid{grid-template-columns:1fr;gap:30px;padding-top:28px}.browser{max-width:580px;transform:none}.services{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.demoGrid{grid-template-columns:1fr}.contactGrid{grid-template-columns:1fr}}@media(max-width:620px){.wrap{width:calc(100% - 28px)}.nav{padding:14px 0}.navlinks{display:none}.nav .btn{padding:9px 12px;font-size:.8rem}.hero{padding-bottom:48px}.heroGrid{padding-top:25px}.lead{font-size:1rem}.section{padding:58px 0}.services,.steps{grid-template-columns:1fr}.panelBody{padding:15px}.product{align-items:flex-start}.band{display:block;padding:24px}.band .btn{margin-top:18px}.footerIn{align-items:flex-start;flex-direction:column}.browserTitle{font-size:1.35rem}.stat{padding:9px}.stat b{font-size:1rem}.stat span{font-size:.62rem}}
+
+/* Showcase visual: animação construída em CSS, sem arquivo externo pesado. */
+.automationShowcase{position:relative;overflow:hidden;padding:72px 0;background:radial-gradient(ellipse at 12% 10%,#1e4c61 0,transparent 35%),linear-gradient(135deg,#0a1b2d,#102f45);color:#f5fbff}
+.automationHead{max-width:790px;text-align:center;margin:0 auto 28px}
+.automationHead .eyebrow{color:var(--mint);justify-content:center}
+.automationHead h2{font-size:clamp(2rem,4.3vw,3.1rem);line-height:1.08;letter-spacing:-.055em;margin:12px 0}
+.automationHead h2 span{color:var(--mint)}
+.automationHead p{max-width:680px;margin:0 auto;color:#c3d3de;font-size:1rem}
+.automationStage{display:grid;grid-template-columns:.7fr 1.3fr;gap:23px;align-items:stretch;max-width:1040px;margin:auto;padding:19px;border:1px solid #35566a;border-radius:25px;background:linear-gradient(145deg,#13354b,#10283b);box-shadow:0 25px 75px #0003}
+.robotScene{position:relative;isolation:isolate;min-height:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;border:1px solid #2e5267;border-radius:18px;background:radial-gradient(circle at 50% 42%,#28566a 0,#15384d 43%,#102a3d 78%)}
+.robotAura{position:absolute;width:215px;height:215px;border:1px solid #65ddcf24;border-radius:50%;box-shadow:0 0 0 22px #65ddcf08,0 0 0 46px #65ddcf05;animation:auraPulse 4.5s ease-in-out infinite;z-index:-1}
+.robotBot{position:relative;width:142px;height:178px;display:flex;flex-direction:column;align-items:center;animation:robotFloat 3.4s ease-in-out infinite;filter:drop-shadow(0 16px 18px #05152255)}
+.robotAntenna{position:absolute;top:0;left:68px;width:6px;height:19px;border-radius:9px;background:#8beadd}
+.robotAntenna:before{content:"";position:absolute;top:-9px;left:-4px;width:14px;height:14px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px #65ddcf;animation:antennaGlow 1.8s ease-in-out infinite}
+.robotHead{position:absolute;top:22px;width:116px;height:86px;border:2px solid #8beadd;border-radius:27px 27px 23px 23px;background:linear-gradient(145deg,#f6fffe,#b7e8e3);box-shadow:inset 0 -8px 0 #84ccc4;display:flex;align-items:center;justify-content:center;gap:23px}
+.robotEye{width:12px;height:16px;border-radius:50%;background:#14364b;position:relative;animation:robotBlink 5s infinite}
+.robotEye:after{content:"";position:absolute;top:3px;left:3px;width:4px;height:4px;border-radius:50%;background:#fff}
+.robotSmile{position:absolute;left:43px;bottom:17px;width:28px;height:10px;border-bottom:3px solid #367e81;border-radius:0 0 20px 20px}
+.robotEar{position:absolute;top:51px;width:11px;height:26px;background:#65ddcf;border-radius:6px}
+.robotEar.left{left:7px}.robotEar.right{right:7px}
+.robotBody{position:absolute;top:117px;width:89px;height:57px;border:2px solid #7bd6cb;border-radius:18px;background:linear-gradient(145deg,#dffaf5,#93dcd3);display:flex;align-items:center;justify-content:center}
+.robotBadge{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#15384d;color:var(--mint);font-weight:950;font-size:1.2rem;box-shadow:0 0 0 5px #ffffff50}
+.robotArm{position:absolute;top:129px;width:17px;height:39px;border:2px solid #7bd6cb;border-radius:12px;background:#b8ece5;transform-origin:top center}
+.robotArm.left{left:12px;transform:rotate(18deg)}
+.robotArm.right{right:12px;transform:rotate(-22deg);animation:robotWave 2.6s ease-in-out infinite}
+.robotFoot{position:absolute;top:168px;width:28px;height:11px;border-radius:9px;background:#6ec8bd}
+.robotFoot.left{left:44px}.robotFoot.right{right:44px}
+.robotSpeech{position:relative;margin-top:191px;max-width:225px;padding:10px 13px;border:1px solid #6b9aab;border-radius:13px;background:#eafffb;color:#15384d;font-size:.79rem;font-weight:750;text-align:center;box-shadow:0 8px 24px #06152125}
+.robotSpeech:before{content:"";position:absolute;top:-6px;left:calc(50% - 6px);width:10px;height:10px;transform:rotate(45deg);border-top:1px solid #6b9aab;border-left:1px solid #6b9aab;background:#eafffb}
+.robotCaption{display:flex;align-items:center;gap:7px;margin-top:12px;color:#a8c5d2;font-size:.67rem;letter-spacing:.14em;font-weight:850}
+.robotCaption span{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px #65ddcf}
+.floatTile{position:absolute;display:grid;place-items:center;width:40px;height:40px;border:1px solid #5f8b9d;border-radius:12px;background:#173f54;color:#a7f4e9;font-size:1.05rem;box-shadow:0 8px 25px #06152140;animation:tileFloat 4s ease-in-out infinite}
+.floatTile.one{top:25px;left:24px;transform:rotate(-8deg)}.floatTile.two{right:22px;top:65px;animation-delay:-1.4s}.floatTile.three{bottom:69px;left:19px;animation-delay:-2.1s}
+.automationConsole{padding:9px 8px 7px}
+.automationConsoleTop{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#b4cbd7;font-size:.68rem;font-weight:900;letter-spacing:.08em}
+.automationLive{display:inline-flex;align-items:center;gap:8px}
+.liveDot{display:inline-block;width:7px;height:7px;background:#65ddcf;border-radius:50%;box-shadow:0 0 0 5px #65ddcf16;animation:livePulse 1.7s infinite}
+.demoOnly{border:1px solid #3d667a;background:#173a4d;padding:5px 8px;border-radius:999px;letter-spacing:0;font-size:.65rem}
+.automationConsole h3{font-size:clamp(1.3rem,2.7vw,1.8rem);line-height:1.12;letter-spacing:-.04em;margin:20px 0 8px}
+.automationConsole>p{font-size:.86rem;color:#b9ccd7;margin:0 0 17px;max-width:590px}
+.flowList{display:grid;gap:9px}
+.flowStep{display:grid;grid-template-columns:39px minmax(0,1fr) auto;align-items:center;gap:11px;padding:12px;border:1px solid #345367;border-radius:13px;background:#102b3e;transition:border-color .25s,background .25s}
+.flowStep.active{border-color:#65ddcf;background:#153b4d;box-shadow:0 0 0 2px #65ddcf12}
+.flowStep.done{border-color:#367a76;background:#123b43}
+.flowIcon{display:grid;place-items:center;width:37px;height:37px;border-radius:11px;background:#203f52;color:#a9c6d2;font-size:.75rem;font-weight:900}
+.flowStep.active .flowIcon,.flowStep.done .flowIcon{background:#65ddcf;color:#10243a}
+.flowStep strong{display:block;font-size:.85rem;color:#f3fbff}
+.flowStep small{display:block;margin-top:3px;color:#a9c1ce;font-size:.73rem}
+.flowStatus{font-size:.68rem;color:#9eb8c7;white-space:nowrap}
+.flowStep.active .flowStatus{color:#65ddcf}.flowStep.done .flowStatus{color:#8beadd}
+.progressTrack{height:5px;margin:15px 0 13px;border-radius:99px;overflow:hidden;background:#294759}
+.progressTrack span{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,#4cb8ab,#8af3e4);transition:width .55s ease}
+.automationResult{border:1px solid #397d76;border-radius:14px;padding:13px;background:linear-gradient(135deg,#133f46,#15364a);animation:resultIn .4s ease-out}
+.resultTop{display:flex;align-items:center;gap:8px;color:#8beadd;font-size:.77rem;font-weight:900;margin-bottom:10px}
+.resultTop span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#65ddcf;color:#10243a}
+.resultKpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.resultKpi{padding:10px 8px;background:#0d2b3b;border-radius:10px}
+.resultKpi b{display:block;font-size:1.15rem;line-height:1.3;color:#f3fffd}
+.resultKpi small{display:block;color:#a9c6d2;font-size:.67rem;line-height:1.3}
+.resultFoot{font-size:.72rem;color:#b4ccd5;margin:10px 0 0}
+.automationControls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px}
+.automationControls .btn{border:0}
+.automationMessage{font-size:.73rem;color:#a9c6d2}
+.automationFootnote{font-size:.72rem;color:#92afbd;margin:12px 0 0}
+@keyframes robotFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
+@keyframes robotBlink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}
+@keyframes antennaGlow{0%,100%{box-shadow:0 0 9px #65ddcf}50%{box-shadow:0 0 21px #65ddcf,0 0 30px #65ddcf65}}
+@keyframes robotWave{0%,100%{transform:rotate(-22deg)}48%,65%{transform:rotate(-58deg)}}
+@keyframes auraPulse{0%,100%{transform:scale(.94);opacity:.75}50%{transform:scale(1.05);opacity:1}}
+@keyframes tileFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 4px #65ddcf15}50%{box-shadow:0 0 0 7px #65ddcf08}}
+@keyframes resultIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.automationStage{grid-template-columns:.7fr 1.3fr;gap:15px;padding:14px}.robotScene{min-height:340px}.automationConsole{padding:7px 4px}.flowStep{grid-template-columns:34px minmax(0,1fr);gap:9px}.flowIcon{width:33px;height:33px}.flowStatus{grid-column:2}.resultKpis{grid-template-columns:1fr}.resultKpi{display:flex;align-items:center;justify-content:space-between;gap:12px}.resultKpi small{text-align:right}}
+@media(max-width:620px){.automationShowcase{padding:54px 0}.automationHead{text-align:left;margin-bottom:22px}.automationHead .eyebrow{justify-content:flex-start}.automationHead p{font-size:.94rem}.automationStage{grid-template-columns:1fr;padding:11px;border-radius:20px}.robotScene{min-height:285px}.robotSpeech{margin-top:191px}.automationConsole{padding:10px 4px 5px}.automationConsole h3{margin-top:16px}.flowStep{grid-template-columns:37px minmax(0,1fr) auto}.flowIcon{width:35px;height:35px}.flowStatus{grid-column:auto}.resultKpis{grid-template-columns:repeat(3,1fr)}.resultKpi{display:block;padding:8px 6px}.resultKpi b{font-size:1rem}.resultKpi small{text-align:left;font-size:.62rem}.automationControls{align-items:flex-start;flex-direction:column;gap:8px}.automationControls .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.robotAura,.robotBot,.robotEye,.robotAntenna:before,.robotArm.right,.floatTile,.liveDot{animation:none!important}.flowStep,.progressTrack span{transition:none!important}.automationResult{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -34,6 +110,48 @@
   </div>
  </div>
 </header>
+
+<section class="automationShowcase" id="automacao-demo">
+ <div class="wrap">
+  <div class="automationHead">
+   <div class="eyebrow"><span class="dot"></span> Menos tarefa repetitiva. Mais tempo para crescer.</div>
+   <h2>Otimize seu dia. <span>Automatize o que toma seu tempo.</span></h2>
+   <p>Veja uma rotina simples passar de informações soltas a um resumo organizado. É uma demonstração do tipo de solução que podemos adaptar à realidade do seu negócio.</p>
+  </div>
+  <div class="automationStage">
+   <div class="robotScene" aria-label="Robô animado da Soluvi Digital">
+    <div class="robotAura"></div><div class="floatTile one" aria-hidden="true">▤</div><div class="floatTile two" aria-hidden="true">✓</div><div class="floatTile three" aria-hidden="true">↗</div>
+    <div class="robotBot" aria-hidden="true">
+     <span class="robotAntenna"></span><span class="robotEar left"></span><span class="robotEar right"></span>
+     <div class="robotHead"><span class="robotEye"></span><span class="robotEye"></span><span class="robotSmile"></span></div>
+     <span class="robotArm left"></span><span class="robotArm right"></span>
+     <div class="robotBody"><span class="robotBadge">S</span></div><span class="robotFoot left"></span><span class="robotFoot right"></span>
+    </div>
+    <div class="robotSpeech">Oi! Eu organizo as tarefas repetitivas para você. ✨</div>
+    <div class="robotCaption"><span></span> ASSISTENTE SOLUVI</div>
+   </div>
+   <div class="automationConsole">
+    <div class="automationConsoleTop"><span class="automationLive"><i class="liveDot"></i> DEMONSTRAÇÃO INTERATIVA</span><span class="demoOnly">Dados fictícios</span></div>
+    <h3>De tarefas soltas a um resumo organizado.</h3>
+    <p>Imagine ter que conferir informações, localizar pendências e montar um relatório. Veja como um fluxo automatizado pode organizar essas etapas.</p>
+    <div class="flowList" aria-live="polite">
+     <div class="flowStep" id="flowStep1"><span class="flowIcon">01</span><div><strong>Organizar informações</strong><small id="flowSub1">Exemplo: reunir registros em um só lugar</small></div><span class="flowStatus" id="flowStatus1">Na fila</span></div>
+     <div class="flowStep" id="flowStep2"><span class="flowIcon">02</span><div><strong>Identificar pontos de atenção</strong><small id="flowSub2">Exemplo: destacar itens que precisam de revisão</small></div><span class="flowStatus" id="flowStatus2">Na fila</span></div>
+     <div class="flowStep" id="flowStep3"><span class="flowIcon">03</span><div><strong>Preparar um resumo</strong><small id="flowSub3">Exemplo: gerar uma visão pronta para analisar</small></div><span class="flowStatus" id="flowStatus3">Na fila</span></div>
+    </div>
+    <div class="progressTrack" aria-label="Progresso da demonstração"><span id="automationProgress"></span></div>
+    <div class="automationResult hidden" id="automationResult" role="status">
+     <div class="resultTop"><span>✓</span> Resumo de demonstração pronto</div>
+     <div class="resultKpis"><div class="resultKpi"><b>28</b><small>registros organizados</small></div><div class="resultKpi"><b>04</b><small>pontos para revisar</small></div><div class="resultKpi"><b>01</b><small>resumo preparado</small></div></div>
+     <p class="resultFoot">Resultado ilustrativo com dados de exemplo — não representa ganho de produtividade medido.</p>
+    </div>
+    <div class="automationControls"><button class="btn" type="button" id="runAutomation">▶ Ver a automação em ação</button><span class="automationMessage" id="automationMessage">Toque para executar o exemplo interativo.</span></div>
+    <p class="automationFootnote">Protótipo visual: não acessa arquivos ou sistemas reais. Cada automação é planejada conforme o processo e os dados autorizados pelo cliente.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
 <main>
 <section class="section" id="solucoes"><div class="wrap"><div class="sectionHead"><div class="eyebrow">O que fazemos</div><h2>Ferramentas úteis para o dia a dia do seu negócio.</h2><p>Unimos visão comercial, marketing e pensamento analítico para criar soluções claras e práticas.</p></div>
 <div class="services">
@@ -207,6 +325,41 @@ function showSupportMenu(){
  clearActions();bubble("Menu principal","user");bubble("Qual assunto você quer testar agora?","bot");
  actionButton("Acompanhar pedido",()=>supportTopic("order"));actionButton("Dúvida de cobrança",()=>supportTopic("billing"));actionButton("Problema técnico",()=>supportTopic("technical"));actionButton("Falar com atendente",()=>supportTopic("human"));
 }
+
+/* DEMO 00: sequência visual ilustrativa de automação, sem conexão com dados reais. */
+(function setupAutomationShowcase(){
+ const runButton=document.getElementById("runAutomation");
+ if(!runButton)return;
+ const progress=document.getElementById("automationProgress");
+ const result=document.getElementById("automationResult");
+ const message=document.getElementById("automationMessage");
+ const steps=[1,2,3].map(n=>({row:document.getElementById("flowStep"+n),status:document.getElementById("flowStatus"+n)}));
+ let timers=[];
+ runButton.addEventListener("click",()=>{
+  timers.forEach(clearTimeout);timers=[];
+  result.classList.add("hidden");progress.style.width="0%";
+  steps.forEach(s=>{s.row.classList.remove("active","done");s.status.textContent="Na fila";});
+  runButton.disabled=true;runButton.textContent="Executando demonstração…";message.textContent="Organizando o exemplo…";
+  const labels=["Registros reunidos","Pontos destacados","Resumo preparado"];
+  steps.forEach((s,i)=>{
+   timers.push(setTimeout(()=>{
+    steps.forEach((prior,j)=>{
+     prior.row.classList.remove("active","done");
+     if(j<i||(i===steps.length-1&&j===i)){prior.row.classList.add("done");prior.status.textContent="Concluído";}
+     else if(j===i){prior.row.classList.add("active");prior.status.textContent="Em andamento";}
+     else{prior.status.textContent="Na fila";}
+    });
+    progress.style.width=(i===steps.length-1?100:Math.round((i+1)/steps.length*100))+"%";
+    message.textContent=labels[i]+"…";
+    if(i===steps.length-1){
+     result.classList.remove("hidden");message.textContent="Fluxo concluído. Os números são apenas ilustrativos.";
+     runButton.disabled=false;runButton.textContent="Executar novamente ↻";
+    }
+   },450+i*720));
+  });
+ });
+})();
+
 document.getElementById("contactForm").addEventListener("submit",e=>{
  e.preventDefault();const d=new FormData(e.currentTarget);
  const msg="Olá, Soluvi Digital! Meu nome é "+d.get("name")+". Empresa: "+(d.get("business")||"não informada")+". Interesse: "+d.get("need")+". Desafio: "+(d.get("details")||"não informado")+".";
