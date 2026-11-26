@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101714">
+  <meta name="description" content="FORMA — acompanhamento de treinos, medidas e evolução com seu treinador.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <title>FORMA — Treinamento e evolução</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101714;--panel:#18211c;--panel2:#202b24;--line:#2e3c33;--text:#f2f6f1;--muted:#a5b2a7;--lime:#c7f36b;--lime2:#d9fb8d;--danger:#ff8585;--shadow:0 18px 55px rgba(0,0,0,.25)}
+    *{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 80% -10%,rgba(199,243,107,.11),transparent 33%),var(--bg);color:var(--text);min-height:100vh}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+    .topbar{height:76px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:.2em;font-size:20px}.brandmark{width:34px;height:34px;border-radius:11px;background:var(--lime);display:grid;place-items:center;color:#142016;font-weight:1000;letter-spacing:0;font-size:18px}.topmeta{color:var(--muted);font-size:12px;letter-spacing:.11em;text-transform:uppercase}
+    .hero{padding:54px 0 30px;display:grid;grid-template-columns:1.12fr .88fr;gap:36px;align-items:center}.eyebrow{color:var(--lime);font-size:11px;font-weight:850;letter-spacing:.19em;text-transform:uppercase}.hero h1{font-size:clamp(38px,6vw,68px);line-height:.98;letter-spacing:-.055em;margin:15px 0 18px;max-width:660px}.hero h1 span{color:var(--lime)}.hero p{color:var(--muted);font-size:16px;line-height:1.7;max-width:560px;margin:0}.hero-points{display:flex;gap:18px;margin-top:28px;flex-wrap:wrap}.point{font-size:12px;color:#d5dfd5;display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:99px;background:var(--lime)}
+    .auth-card,.panel{background:linear-gradient(150deg,rgba(32,43,36,.96),rgba(22,30,25,.98));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.auth-card{padding:25px}.auth-card h2{margin:0 0 7px;font-size:22px;letter-spacing:-.03em}.sub{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 20px}.tabs{display:flex;background:#111914;border-radius:12px;padding:4px;margin-bottom:20px}.tab{flex:1;border:0;border-radius:9px;padding:10px;color:var(--muted);background:transparent;font-size:13px;font-weight:750}.tab.active{background:var(--panel2);color:var(--text)}.field{display:flex;flex-direction:column;gap:7px;margin:13px 0}.field label{font-size:12px;font-weight:750;color:#d7e0d6}.field input,.field select,.field textarea{width:100%;border:1px solid #35453a;background:#111914;color:var(--text);padding:13px 14px;border-radius:11px;outline:none;min-width:0}.field textarea{min-height:82px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lime);box-shadow:0 0 0 3px rgba(199,243,107,.1)}.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:12px;padding:13px 17px;font-weight:850;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--lime);color:#172018}.btn-primary:hover{background:var(--lime2)}.btn-secondary{background:#26342b;color:var(--text);border:1px solid #3a4c3e}.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn-full{width:100%;margin-top:8px}.tiny-link{border:0;background:transparent;color:var(--lime);font-size:12px;padding:10px 0 0}.notice{padding:11px 13px;border-radius:11px;font-size:12px;line-height:1.45;margin:12px 0;background:rgba(199,243,107,.09);border:1px solid rgba(199,243,107,.22);color:#dff7b8}.notice.error{background:rgba(255,133,133,.08);border-color:rgba(255,133,133,.25);color:#ffb6b6}
+    .trust{padding:15px 0 54px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.trust-card{border-top:1px solid var(--line);padding:17px 4px}.trust-card strong{display:block;font-size:13px;margin-bottom:6px}.trust-card span{font-size:12px;color:var(--muted);line-height:1.5}
+    .app{padding:26px 0 58px}.apphead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.welcome h1{font-size:30px;letter-spacing:-.04em;margin:0 0 5px}.welcome p{font-size:13px;color:var(--muted);margin:0}.head-actions{display:flex;gap:9px;align-items:center}.pill{border:1px solid #3b4d3e;color:var(--lime);border-radius:100px;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}.col-12{grid-column:span 12}.col-8{grid-column:span 8}.col-7{grid-column:span 7}.col-6{grid-column:span 6}.col-5{grid-column:span 5}.col-4{grid-column:span 4}
+    .panel{padding:20px;box-shadow:none}.panel h3{margin:0 0 5px;font-size:16px;letter-spacing:-.02em}.panel .muted{color:var(--muted);font-size:12px;line-height:1.5}.metric{font-size:30px;font-weight:900;letter-spacing:-.05em;margin:12px 0 2px}.metric small{font-size:13px;color:var(--muted);font-weight:650;letter-spacing:0}.panel-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.panel-title h3{margin:0}.panel-title span{font-size:11px;color:var(--muted)}.empty{padding:19px;border:1px dashed #415045;border-radius:13px;color:var(--muted);font-size:12px;line-height:1.55;text-align:center}.stack{display:flex;flex-direction:column;gap:10px}.item{border:1px solid var(--line);background:rgba(13,20,16,.42);padding:13px;border-radius:13px}.item strong{font-size:13px}.item small{font-size:11px;color:var(--muted)}.item p{font-size:12px;color:var(--muted);margin:7px 0 0;line-height:1.5}.student-item{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}.student-item:hover{border-color:#647b58}.avatar{height:36px;width:36px;border-radius:12px;background:#33422f;color:var(--lime);display:grid;place-items:center;font-weight:900;flex-shrink:0}.student-main{display:flex;align-items:center;gap:11px;min-width:0}.student-main div:last-child{min-width:0}.student-main strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.codebox{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#111914;border:1px dashed #60724f;border-radius:13px;padding:13px;margin-top:13px}.codebox code{color:var(--lime);font-weight:900;letter-spacing:.13em;font-size:14px}
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 12px}.form-grid .wide{grid-column:1/-1}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.separator{height:1px;background:var(--line);margin:17px 0}.backline{display:flex;align-items:center;gap:10px;margin:0 0 16px}.backline button{border:0;background:transparent;color:var(--lime);padding:0;font-size:12px}.footer{padding:24px 0 34px;color:#728075;text-align:center;font-size:11px;border-top:1px solid rgba(255,255,255,.06)}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:38px}.hero h1{font-size:48px}.auth-card{max-width:560px}.trust{grid-template-columns:1fr}.col-8,.col-7,.col-6,.col-5,.col-4{grid-column:span 12}.apphead{align-items:flex-start}.head-actions{flex-wrap:wrap;justify-content:flex-end}.welcome h1{font-size:25px}}
+    @media(max-width:480px){.wrap{padding:0 15px}.topbar{height:64px}.topmeta{font-size:9px}.hero{padding:30px 0 20px;gap:22px}.hero h1{font-size:42px}.hero p{font-size:14px}.auth-card{padding:19px}.row2{grid-template-columns:1fr}.apphead{display:block}.head-actions{justify-content:flex-start;margin-top:14px}.panel{padding:16px}.metric{font-size:27px}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.codebox{align-items:flex-start;flex-direction:column}.codebox .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <div class="brand"><div class="brandmark">F</div> FORMA</div>
+    <div class="topmeta">Treinamento · Evolução · Consistência</div>
+  </header>
+  <main id="root">
+    <section id="landing" class="wrap">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Sua evolução começa aqui</div>
+          <h1>Treine com propósito.<br><span>Evolua com dados.</span></h1>
+          <p>Organize seus treinos, acompanhe suas medidas e mantenha sua evolução em um só lugar — junto com seu treinador.</p>
+          <div class="hero-points"><div class="point"><i class="dot"></i> Seu histórico sempre com você</div><div class="point"><i class="dot"></i> Acompanhamento individual</div><div class="point"><i class="dot"></i> Feito para celular</div></div>
+        </div>
+        <div class="auth-card">
+          <h2 id="authTitle">Entre no FORMA</h2>
+          <p class="sub" id="authSubtitle">Acesse sua área de treino e evolução.</p>
+          <div class="tabs"><button class="tab active" id="tabLogin" type="button">Entrar</button><button class="tab" id="tabSignup" type="button">Criar conta</button></div>
+          <form id="authForm">
+            <div class="field hidden" id="nameField"><label for="fullName">Nome completo</label><input id="fullName" autocomplete="name" placeholder="Como podemos chamar você?"></div>
+            <div class="field"><label for="email">E-mail</label><input id="email" type="email" required autocomplete="email" placeholder="voce@email.com"></div>
+            <div class="field"><label for="password">Senha</label><input id="password" type="password" required minlength="8" autocomplete="current-password" placeholder="Mínimo de 8 caracteres"></div>
+            <div id="authMessage" aria-live="polite"></div>
+            <button class="btn btn-primary btn-full" id="authSubmit" type="submit">Entrar na minha conta</button>
+            <button class="tiny-link" id="forgot" type="button">Esqueci minha senha</button>
+          </form>
+        </div>
+      </div>
+      <div class="trust">
+        <div class="trust-card"><strong>01 · Seu espaço</strong><span>Seus dados e registros são privados e ficam vinculados à sua conta.</span></div>
+        <div class="trust-card"><strong>02 · Seu treinador</strong><span>Vincule-se ao treinador pelo código que ele compartilhar com você.</span></div>
+        <div class="trust-card"><strong>03 · Sua evolução</strong><span>Registre medidas e treinos para acompanhar sua consistência ao longo do tempo.</span></div>
+      </div>
+    </section>
+    <section id="dashboard" class="app wrap hidden"></section>
+  </main>
+  <footer class="footer"><div class="wrap">FORMA · Seu progresso, no seu ritmo. · Esta plataforma não substitui orientação médica ou nutricional.</div></footer>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+    const SUPABASE_URL = 'https://xpewdtixucjmjqhbpodi.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_9qRB7VhL8bsevt0li7eCvA_Ons4ZzLq';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+    const $ = (id) => document.getElementById(id);
+    const state = { user:null, profile:null, relationships:[], students:[], measurements:[], logs:[], plans:[], selectedStudent:null, selectedMeasurements:[], selectedLogs:[], selectedPlans:[], mode:'login', notice:'' };
+    const esc = (v) => String(v == null ? '' : v).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const dateLabel = (v) => v ? new Date(v + (String(v).length===10?'T12:00:00':'' )).toLocaleDateString('pt-BR') : '—';
+    const initials = (v) => (String(v||'F').trim().split(/\s+/).slice(0,2).map(x=>x[0]).join('')||'F').toUpperCase();
+    const fmt = (v, suffix) => v == null || v === '' ? '—' : Number(v).toLocaleString('pt-BR',{maximumFractionDigits:2}) + (suffix||'');
+    const today = () => new Date().toISOString().slice(0,10);
+    function message(el, text, error){ $(el).innerHTML = text ? '<div class="notice '+(error?'error':'')+'">'+esc(text)+'</div>' : ''; }
+    function setAuthMode(mode){
+      state.mode=mode; $('tabLogin').classList.toggle('active',mode==='login'); $('tabSignup').classList.toggle('active',mode==='signup');
+      $('nameField').classList.toggle('hidden',mode!=='signup'); $('authTitle').textContent=mode==='signup'?'Crie sua conta':'Entre no FORMA';
+      $('authSubtitle').textContent=mode==='signup'?'Comece como aluno. Depois você pode se vincular ao seu treinador.':'Acesse sua área de treino e evolução.';
+      $('authSubmit').textContent=mode==='signup'?'Criar minha conta':'Entrar na minha conta'; $('password').autocomplete=mode==='signup'?'new-password':'current-password'; message('authMessage','',false);
+    }
+    $('tabLogin').addEventListener('click',()=>setAuthMode('login'));
+    $('tabSignup').addEventListener('click',()=>setAuthMode('signup'));
+    $('authForm').addEventListener('submit',async(e)=>{
+      e.preventDefault(); const email=$('email').value.trim(); const password=$('password').value;
+      $('authSubmit').disabled=true; $('authSubmit').textContent='Aguarde...'; message('authMessage','',false);
+      try{
+        if(state.mode==='signup'){
+          const full_name=$('fullName').value.trim(); if(!full_name) throw new Error('Informe seu nome completo.');
+          const {data,error}=await supabase.auth.signUp({email,password,options:{data:{full_name},emailRedirectTo:window.location.origin}});
+          if(error) throw error;
+          if(data.session){ state.user=data.user; await refreshApp(); }
+          else message('authMessage','Cadastro iniciado! Confira seu e-mail para confirmar a conta. Depois volte aqui e entre com sua senha.',false);
+        }else{
+          const {data,error}=await supabase.auth.signInWithPassword({email,password}); if(error) throw error; state.user=data.user; await refreshApp();
+        }
+      }catch(err){message('authMessage',err.message||'Não foi possível concluir. Tente novamente.',true);}
+      finally{$('authSubmit').disabled=false;$('authSubmit').textContent=state.mode==='signup'?'Criar minha conta':'Entrar na minha conta';}
+    });
+    $('forgot').addEventListener('click',async()=>{
+      const email=$('email').value.trim(); if(!email){message('authMessage','Digite seu e-mail acima para receber o link de recuperação.',true);return;}
+      const {error}=await supabase.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin});
+      message('authMessage',error?error.message:'Se esse e-mail estiver cadastrado, enviaremos as instruções de recuperação.',!!error);
+    });
+    $('dashboard').addEventListener('click',async(e)=>{
+      const btn=e.target.closest('[data-action]'); if(!btn)return; const action=btn.dataset.action;
+      try{
+        if(action==='logout'){await supabase.auth.signOut();state.user=null;state.profile=null;showLanding();return;}
+        if(action==='copy'){await navigator.clipboard.writeText(state.profile.trainer_code);btn.textContent='Copiado!';setTimeout(()=>btn.textContent='Copiar código',1400);return;}
+        if(action==='share'){const url=window.location.origin;const text='Crie sua conta no FORMA e vincule-se a mim usando o código '+state.profile.trainer_code+'. Acesse: '+url;if(navigator.share)await navigator.share({title:'FORMA',text,url});else{await navigator.clipboard.writeText(text);btn.textContent='Convite copiado!';}return;}
+        if(action==='student'){state.selectedStudent=btn.dataset.id;await loadSelectedStudent();renderDashboard();return;}
+        if(action==='back'){state.selectedStudent=null;renderDashboard();return;}
+        if(action==='activate'){const code=$('activationCode').value.trim();btn.disabled=true;const {data,error}=await supabase.rpc('activate_trainer',{p_code:code});if(error)throw error;state.notice='Perfil de treinador ativado. Seu código de alunos é '+data.trainer_code+'.';await refreshApp();return;}
+        if(action==='link'){const code=$('trainerCode').value.trim();btn.disabled=true;const {error}=await supabase.rpc('link_to_trainer',{p_trainer_code:code});if(error)throw error;state.notice='Você foi vinculado ao treinador com sucesso.';await refreshApp();return;}
+      }catch(err){state.notice=err.message||'Ocorreu um erro.';renderDashboard();}
+      finally{if(btn.isConnected)btn.disabled=false;}
+    });
+    $('dashboard').addEventListener('submit',async(e)=>{
+      e.preventDefault();const form=e.target;
+      try{
+        if(form.id==='profileForm'){
+          const payload={full_name:$('profileName').value.trim(),phone:$('profilePhone').value.trim()||null,goal:$('profileGoal').value.trim()||null,updated_at:new Date().toISOString()};
+          const {error}=await supabase.from('profiles').update(payload).eq('id',state.user.id);if(error)throw error;state.notice='Perfil atualizado.';await refreshApp();return;
+        }
+        if(form.id==='measurementForm'){
+          const payload={student_id:state.user.id,measured_on:$('measureDate').value||today(),weight_kg:num('weight'),body_fat_pct:num('bodyFat'),waist_cm:num('waist'),chest_cm:num('chest'),hip_cm:num('hip'),arm_cm:num('arm'),thigh_cm:num('thigh'),notes:$('measureNotes').value.trim()||null};
+          if(!payload.weight_kg&&!payload.body_fat_pct&&!payload.waist_cm&&!payload.chest_cm&&!payload.hip_cm&&!payload.arm_cm&&!payload.thigh_cm)throw new Error('Preencha pelo menos uma medida.');
+          const {error}=await supabase.from('body_measurements').insert(payload);if(error)throw error;state.notice='Medidas registradas.';await refreshApp();return;
+        }
+        if(form.id==='trainingForm'){
+          const payload={student_id:state.user.id,title:$('trainingTitle').value.trim(),duration_minutes:num('duration'),effort:num('effort'),notes:$('trainingNotes').value.trim()||null};
+          if(!payload.title)throw new Error('Informe o nome do treino.');
+          const {error}=await supabase.from('training_logs').insert(payload);if(error)throw error;state.notice='Treino registrado. Continue assim!';await refreshApp();return;
+        }
+        if(form.id==='planForm'){
+          const studentId=$('planStudent').value;const payload={trainer_id:state.user.id,student_id:studentId,title:$('planTitle').value.trim(),description:$('planDescription').value.trim()||null,days_per_week:Number($('planDays').value),start_date:$('planStart').value||today()};
+          if(!studentId||!payload.title)throw new Error('Selecione um aluno e informe o título do plano.');
+          const {error}=await supabase.from('workout_plans').insert(payload);if(error)throw error;state.notice='Plano criado para o aluno.';state.selectedStudent=studentId;await loadSelectedStudent();await loadAll();renderDashboard();return;
+        }
+      }catch(err){state.notice=err.message||'Não foi possível salvar.';renderDashboard();}
+    });
+    function num(id){const v=$(id)?.value;return v===''||v==null?null:Number(v);}
+    async function loadAll(){
+      const p=await supabase.from('profiles').select('*').eq('id',state.user.id).single();if(p.error)throw p.error;state.profile=p.data;
+      if(state.profile.role==='trainer'){
+        const rel=await supabase.from('trainer_students').select('id,student_id,created_at,student:profiles!trainer_students_student_id_fkey(id,full_name,phone,goal)').eq('trainer_id',state.user.id).order('created_at',{ascending:false});
+        if(rel.error)throw rel.error;state.students=rel.data||[];
+        const pl=await supabase.from('workout_plans').select('id').eq('trainer_id',state.user.id);if(pl.error)throw pl.error;state.plans=pl.data||[];
+        if(state.selectedStudent)await loadSelectedStudent();
+      }else{
+        const rel=await supabase.from('trainer_students').select('id,trainer_id,trainer:profiles!trainer_students_trainer_id_fkey(id,full_name,trainer_code)').eq('student_id',state.user.id).maybeSingle();
+        if(rel.error)throw rel.error;state.relationships=rel.data?[rel.data]:[];
+        const [m,l,w]=await Promise.all([
+          supabase.from('body_measurements').select('*').eq('student_id',state.user.id).order('measured_on',{ascending:false}).limit(12),
+          supabase.from('training_logs').select('*').eq('student_id',state.user.id).order('performed_at',{ascending:false}).limit(12),
+          supabase.from('workout_plans').select('*').eq('student_id',state.user.id).order('created_at',{ascending:false}).limit(8)
+        ]);
+        if(m.error)throw m.error;if(l.error)throw l.error;if(w.error)throw w.error;state.measurements=m.data||[];state.logs=l.data||[];state.plans=w.data||[];
+      }
+    }
+    async function loadSelectedStudent(){
+      const [m,l,p]=await Promise.all([
+        supabase.from('body_measurements').select('*').eq('student_id',state.selectedStudent).order('measured_on',{ascending:false}).limit(12),
+        supabase.from('training_logs').select('*').eq('student_id',state.selectedStudent).order('performed_at',{ascending:false}).limit(12),
+        supabase.from('workout_plans').select('*').eq('student_id',state.selectedStudent).order('created_at',{ascending:false}).limit(12)
+      ]);
+      if(m.error)throw m.error;if(l.error)throw l.error;if(p.error)throw p.error;state.selectedMeasurements=m.data||[];state.selectedLogs=l.data||[];state.selectedPlans=p.data||[];
+    }
+    async function refreshApp(){
+      $('landing').classList.add('hidden');$('dashboard').classList.remove('hidden');$('dashboard').innerHTML='<div class="empty">Carregando seu espaço...</div>';
+      try{await loadAll();state.notice=state.notice||'';renderDashboard();}catch(err){$('dashboard').innerHTML='<div class="panel"><h3>Não foi possível carregar sua área</h3><p class="muted">'+esc(err.message||'Tente sair e entrar novamente.')+'</p><button class="btn btn-secondary" data-action="logout">Sair</button></div>';}
+    }
+    function showLanding(){ $('dashboard').classList.add('hidden');$('landing').classList.remove('hidden');state.notice=''; }
+    function metric(title,value,detail){return '<div class="panel"><div class="muted">'+title+'</div><div class="metric">'+value+'</div><div class="muted">'+detail+'</div></div>';}
+    function planHtml(p){return '<div class="item"><strong>'+esc(p.title)+'</strong><div><small>'+p.days_per_week+' dias/semana · '+esc(p.status==='active'?'Ativo':p.status)+'</small></div><p>'+esc(p.description||'Plano de treinamento definido com seu treinador.')+'</p></div>';}
+    function measureHtml(m){return '<div class="item"><div style="display:flex;justify-content:space-between;gap:8px"><strong>'+dateLabel(m.measured_on)+'</strong><small>'+fmt(m.weight_kg,' kg')+'</small></div><p>Cintura '+fmt(m.waist_cm,' cm')+' · Peito '+fmt(m.chest_cm,' cm')+' · Gordura '+fmt(m.body_fat_pct,'%')+'</p></div>';}
+    function logHtml(l){return '<div class="item"><div style="display:flex;justify-content:space-between;gap:8px"><strong>'+esc(l.title)+'</strong><small>'+new Date(l.performed_at).toLocaleDateString('pt-BR')+'</small></div><p>'+fmt(l.duration_minutes,' min')+' · Esforço '+fmt(l.effort,'/10')+(l.notes?' · '+esc(l.notes):'')+'</p></div>';}
+    function renderDashboard(){
+      const p=state.profile;if(!p){showLanding();return;}
+      const name=p.full_name||state.user.email||'Olá';const role=p.role==='trainer'?'TREINADOR':'ALUNO';
+      let head='<div class="apphead"><div class="welcome"><h1>Olá, '+esc(name.split(' ')[0])+' 👋</h1><p>Seu espaço de treino e evolução está pronto.</p></div><div class="head-actions"><span class="pill">'+role+'</span><button class="btn btn-ghost" data-action="logout">Sair</button></div></div>';
+      let html=head;
+      if(state.notice){html+='<div class="notice" style="margin-bottom:16px">'+esc(state.notice)+'</div>';state.notice='';}
+      if(p.role==='trainer'){
+        if(state.selectedStudent){
+          const rel=state.students.find(x=>x.student_id===state.selectedStudent);const s=rel?.student||{};
+          html+='<div class="backline"><button data-action="back">← Voltar aos alunos</button><span class="muted">/ '+esc(s.full_name||'Aluno')+'</span></div>';
+          html+='<div class="grid">'+metric('Medidas registradas',state.selectedMeasurements.length,'Histórico do aluno')+metric('Treinos registrados',state.selectedLogs.length,'Atividades concluídas')+metric('Planos cadastrados',state.selectedPlans.length,'Programação de treino')+'</div>';
+          html+='<div class="grid" style="margin-top:15px"><div class="col-6"><div class="panel"><div class="panel-title"><h3>Medidas e evolução</h3><span>Aluno</span></div><div class="stack">'+(state.selectedMeasurements.length?state.selectedMeasurements.map(measureHtml).join(''):'<div class="empty">Este aluno ainda não registrou medidas.</div>')+'</div></div></div><div class="col-6"><div class="panel"><div class="panel-title"><h3>Histórico de treinos</h3><span>Aluno</span></div><div class="stack">'+(state.selectedLogs.length?state.selectedLogs.map(logHtml).join(''):'<div class="empty">Nenhum treino registrado ainda.</div>')+'</div></div></div><div class="col-12"><div class="panel"><div class="panel-title"><h3>Planos de treino</h3><span>Gerencie a programação</span></div><div class="stack">'+(state.selectedPlans.length?state.selectedPlans.map(planHtml).join(''):'<div class="empty">Nenhum plano para este aluno.</div>')+'</div></div></div></div>';
+        }else{
+          html+='<div class="grid">'+metric('Alunos vinculados',state.students.length,'Pessoas acompanhadas por você')+metric('Planos cadastrados',state.plans.length,'Programações criadas')+metric('Status da conta','Ativo','Seu painel de treinador')+'</div>';
+          html+='<div class="grid" style="margin-top:15px"><div class="col-5"><div class="panel"><div class="panel-title"><h3>Convide seus alunos</h3><span>Compartilhe o código</span></div><p class="muted">Peça para a pessoa criar uma conta no FORMA e informar este código para se vincular a você.</p><div class="codebox"><code>'+esc(p.trainer_code||'—')+'</code><button class="btn btn-secondary" data-action="copy">Copiar código</button></div><div class="actions"><button class="btn btn-primary" data-action="share">Compartilhar convite</button></div></div><div class="panel" style="margin-top:15px"><h3>Seu perfil</h3><p class="muted">Mantenha suas informações atualizadas.</p>'+profileForm(p)+'</div></div>';
+          html+='<div class="col-7"><div class="panel"><div class="panel-title"><h3>Meus alunos</h3><span>'+state.students.length+' vinculados</span></div><div class="stack">'+(state.students.length?state.students.map(x=>'<div class="item student-item" data-action="student" data-id="'+esc(x.student_id)+'"><div class="student-main"><div class="avatar">'+esc(initials(x.student?.full_name))+'</div><div><strong>'+esc(x.student?.full_name||'Aluno')+'</strong><small>'+esc(x.student?.goal||'Objetivo não informado')+'</small></div></div><span style="color:var(--lime)">Ver →</span></div>').join(''):'<div class="empty">Você ainda não tem alunos. Compartilhe seu código para começar a receber vínculos.</div>')+'</div></div><div class="panel" style="margin-top:15px"><div class="panel-title"><h3>Criar plano de treino</h3><span>Para um aluno vinculado</span></div>'+(state.students.length?planForm():'<div class="empty">Quando um aluno se vincular a você, será possível criar um plano por aqui.</div>')+'</div></div></div>';
+        }
+      }else{
+        const last=state.measurements[0]||{};const lastPlan=state.plans.find(x=>x.status==='active');
+        html+='<div class="grid">'+metric('Peso atual',fmt(last.weight_kg,' kg'),last.measured_on?'Atualizado em '+dateLabel(last.measured_on):'Registre suas primeiras medidas')+metric('Treinos registrados',state.logs.length,'Últimos registros')+metric('Planos ativos',state.plans.filter(x=>x.status==='active').length,'Treinos prescritos')+'</div>';
+        html+='<div class="grid" style="margin-top:15px"><div class="col-6"><div class="panel"><div class="panel-title"><h3>Registrar medidas</h3><span>Sua evolução</span></div>'+measurementForm()+'</div></div><div class="col-6"><div class="panel"><div class="panel-title"><h3>Registrar treino</h3><span>Histórico de atividade</span></div>'+trainingForm()+'</div></div><div class="col-6"><div class="panel"><div class="panel-title"><h3>Meu plano de treino</h3><span>Orientação</span></div><div class="stack">'+(lastPlan?planHtml(lastPlan):'<div class="empty">Nenhum plano foi atribuído ainda. Quando seu treinador criar um plano, ele aparecerá aqui.</div>')+'</div></div></div><div class="col-6"><div class="panel"><div class="panel-title"><h3>Meu treinador</h3><span>Vínculo</span></div>'+(state.relationships.length?'<div class="item"><div class="student-main"><div class="avatar">'+esc(initials(state.relationships[0].trainer?.full_name))+'</div><div><strong>'+esc(state.relationships[0].trainer?.full_name||'Treinador')+'</strong><small>Você está vinculado a este treinador.</small></div></div></div>':'<p class="muted">Tem um treinador? Informe o código que ele compartilhou para liberar o acompanhamento.</p><div class="field"><label for="trainerCode">Código do treinador</label><input id="trainerCode" placeholder="FORMA-XXXXXXXX"></div><button class="btn btn-primary" data-action="link">Vincular treinador</button>')+'</div></div><div class="col-6"><div class="panel"><div class="panel-title"><h3>Últimas medidas</h3><span>Histórico</span></div><div class="stack">'+(state.measurements.length?state.measurements.slice(0,5).map(measureHtml).join(''):'<div class="empty">Seus registros aparecerão aqui.</div>')+'</div></div></div><div class="col-6"><div class="panel"><div class="panel-title"><h3>Últimos treinos</h3><span>Consistência</span></div><div class="stack">'+(state.logs.length?state.logs.slice(0,5).map(logHtml).join(''):'<div class="empty">Seus treinos registrados aparecerão aqui.</div>')+'</div></div></div><div class="col-12"><div class="panel"><h3>Meu perfil</h3><p class="muted">Atualize seus dados e objetivo.</p>'+profileForm(p)+'</div></div></div>';
+      }
+      $('dashboard').innerHTML=html;
+    }
+    function profileForm(p){return '<form id="profileForm"><div class="form-grid"><div class="field"><label for="profileName">Nome</label><input id="profileName" value="'+esc(p.full_name)+'" required></div><div class="field"><label for="profilePhone">Telefone</label><input id="profilePhone" value="'+esc(p.phone||'')+'" placeholder="(00) 00000-0000"></div><div class="field wide"><label for="profileGoal">Objetivo</label><input id="profileGoal" value="'+esc(p.goal||'')+'" placeholder="Ex.: ganhar massa, melhorar condicionamento..."></div></div><button class="btn btn-secondary" type="submit">Salvar perfil</button></form>';}
+    function measurementForm(){return '<form id="measurementForm"><div class="form-grid"><div class="field"><label for="measureDate">Data</label><input id="measureDate" type="date" value="'+today()+'"></div><div class="field"><label for="weight">Peso (kg)</label><input id="weight" type="number" min="0" max="500" step=".1" placeholder="Ex.: 78,5"></div><div class="field"><label for="bodyFat">Gordura corporal (%)</label><input id="bodyFat" type="number" min="0" max="80" step=".1" placeholder="Opcional"></div><div class="field"><label for="waist">Cintura (cm)</label><input id="waist" type="number" min="0" max="300" step=".1"></div><div class="field"><label for="chest">Peito (cm)</label><input id="chest" type="number" min="0" max="300" step=".1"></div><div class="field"><label for="hip">Quadril (cm)</label><input id="hip" type="number" min="0" max="300" step=".1"></div><div class="field"><label for="arm">Braço (cm)</label><input id="arm" type="number" min="0" max="150" step=".1"></div><div class="field"><label for="thigh">Coxa (cm)</label><input id="thigh" type="number" min="0" max="200" step=".1"></div><div class="field wide"><label for="measureNotes">Observações</label><textarea id="measureNotes" placeholder="Como está sua evolução?"></textarea></div></div><button class="btn btn-primary" type="submit">Salvar medidas</button></form>';}
+    function trainingForm(){return '<form id="trainingForm"><div class="field"><label for="trainingTitle">Treino realizado</label><input id="trainingTitle" required placeholder="Ex.: Peito e tríceps"></div><div class="row2"><div class="field"><label for="duration">Duração (min)</label><input id="duration" type="number" min="1" max="600" placeholder="60"></div><div class="field"><label for="effort">Esforço (1–10)</label><input id="effort" type="number" min="1" max="10" placeholder="7"></div></div><div class="field"><label for="trainingNotes">Observações</label><textarea id="trainingNotes" placeholder="Carga, disposição, observações..."></textarea></div><button class="btn btn-primary" type="submit">Registrar treino</button></form>';}
+    function planForm(){return '<form id="planForm"><div class="field"><label for="planStudent">Aluno</label><select id="planStudent" required>'+state.students.map(x=>'<option value="'+esc(x.student_id)+'" '+(state.selectedStudent===x.student_id?'selected':'')+'>'+esc(x.student?.full_name||'Aluno')+'</option>').join('')+'</select></div><div class="field"><label for="planTitle">Nome do plano</label><input id="planTitle" required placeholder="Ex.: Hipertrofia — divisão ABC"></div><div class="row2"><div class="field"><label for="planDays">Dias por semana</label><select id="planDays"><option>3</option><option>4</option><option selected>5</option><option>6</option><option>7</option></select></div><div class="field"><label for="planStart">Início</label><input id="planStart" type="date" value="'+today()+'"></div></div><div class="field"><label for="planDescription">Descrição e orientações</label><textarea id="planDescription" placeholder="Divisão, exercícios ou instruções gerais..."></textarea></div><button class="btn btn-primary" type="submit">Criar plano</button></form>';}
+    async function init(){
+      if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+      const {data:{session}}=await supabase.auth.getSession();if(session?.user){state.user=session.user;await refreshApp();}
+      supabase.auth.onAuthStateChange((_event,session)=>{if(session?.user){state.user=session.user;refreshApp();}else if(!session){state.user=null;state.profile=null;showLanding();}});
+    }
+    init();
+  </script>
+</body>
+</html>
