@@ -1,4 +1,4 @@
-const CACHE_NAME = 'forma-static-v1';
+const CACHE_NAME = 'forma-static-v2';
 const CORE = ['./','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE)).catch(()=>{}));
