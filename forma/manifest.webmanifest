@@ -1,0 +1,11 @@
+{
+  "name": "FORMA — Treinamento e Evolução",
+  "short_name": "FORMA",
+  "description": "Seu espaço de treino e evolução.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101714",
+  "theme_color": "#101714",
+  "icons": [{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
